@@ -12,6 +12,10 @@ export class UsersService {
     return this.userModel.findOne({ username }).exec();
   }
 
+  async findAll(): Promise<User[] | undefined> {
+    return this.userModel.find().exec();
+  }
+
   async findOneById(id: string): Promise<User | undefined> {
     return this.userModel.findById(id).exec();
   }
@@ -32,7 +36,7 @@ export class UsersService {
 
     const createdUser = new this.userModel({
       ...user,
-      passwordHash,
+      password: passwordHash,
     });
     return createdUser.save();
   }

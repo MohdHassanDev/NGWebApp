@@ -1,0 +1,47 @@
+<div class="flex justify-end m-4">
+  <button
+    (click)="signOut()"
+    class="bg-purple-800 text-white px-3 py-2 rounded"
+  >
+    Logout
+  </button>
+</div>
+<section class="text-gray-600 body-font">
+  <div class="container px-5 py-24 mx-auto">
+    <div class="flex flex-col text-center w-full mb-20">
+      <h1
+        class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900"
+      >
+        Users
+      </h1>
+      <p class="lg:w-2/3 mx-auto leading-relaxed text-base">
+        Users are crucial because they are the lifeblood of any product,
+        service, or organization. They drive demand, provide feedback for
+        improvement, and ultimately determine success or failure. Understanding
+        and meeting user needs is essential for growth and sustainability.
+      </p>
+    </div>
+    <div class="flex flex-wrap -m-2">
+      <div
+        class="p-2 lg:w-1/3 md:w-1/2 w-full"
+        *ngFor="let profile of userProfiles; index as i"
+      >
+        <div
+          class="h-full flex items-center border-gray-200 border p-4 rounded-lg"
+        >
+          <img
+            alt="team"
+            class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4"
+            src="https://dummyimage.com/80x80"
+          />
+          <div class="flex-grow">
+            <h2 class="text-gray-900 title-font font-medium">
+              {{ profile.email }}
+            </h2>
+            <p class="text-gray-500">{{ profile.username }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
